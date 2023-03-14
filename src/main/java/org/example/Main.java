@@ -9,10 +9,12 @@ public class Main {
 
     static void bfs(Graph root) {
         if (root != null && !visited.contains(root.node_id)) {
+            /*put root in visited list*/
             visited.add(root.node_id);
 
             if (root.children != null)
                 for (Graph child : root.children) {
+                    /*put children of root in queue*/
                     //System.out.printf("checking if %s contains %d\n", visited, child.node_id);
                     if (!visited.contains(child.node_id)) {
                         queue.add(child);
